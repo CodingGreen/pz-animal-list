@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -22,5 +23,6 @@ module.exports = {
     'react',
   ],
   rules: {
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["jest-preprocess.js"]}]
   },
 };
