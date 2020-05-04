@@ -1,9 +1,26 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "pz-animal-list",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A static website for displaying a list of all animals available in the game Planet Zoo.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "CodingGreen <17253156+CodingGreen@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CodingGreen/pz-animal-list"
+  },
+  "bugs": {
+    "url": "https://github.com/CodingGreen/pz-animal-list/issues"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "lint": "eslint --ext .jsx --ext .js .",
+    "lint:fix": "eslint --fix --ext .jsx --ext .js .",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "test": "jest"
+  },
   "dependencies": {
     "gatsby": "^2.21.0",
     "gatsby-image": "^2.4.0",
@@ -30,26 +47,5 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.0.0",
     "react-test-renderer": "^16.13.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "clean": "gatsby clean",
-    "develop": "gatsby develop",
-    "lint": "eslint --ext .jsx --ext .js .",
-    "lint:fix": "eslint --fix --ext .jsx --ext .js .",
-    "serve": "gatsby serve",
-    "start": "npm run develop",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
   }
 }
