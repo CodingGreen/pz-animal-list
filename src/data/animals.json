@@ -3,12 +3,14 @@
         "name": "Aardvark",
         "wikiLink": "https://planetzoo.fandom.com/wiki/Aardvark",
         "fenceGrade": 2,
-        "landArea": 330
+        "landArea": 330,
+        "requiresClimbProof": false
     },
     {
         "name": "Colombian White-Faced Capuchin Monkey",
         "wikiLink": "https://planetzoo.fandom.com/wiki/Colombian_White-Faced_Capuchin_Monkey",
         "fenceGrade": 1,
-        "landArea": 210
+        "landArea": 210,
+        "requiresClimbProof": true
     }
 ]

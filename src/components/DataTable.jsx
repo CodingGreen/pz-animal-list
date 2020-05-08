@@ -18,6 +18,16 @@ const columns = [
     Header: 'Land Area (m²)',
     accessor: 'landArea',
   },
+  {
+    Header: 'Requires climb proof fencing?',
+    id: 'requiresClimbProof',
+    accessor: (row) => {
+      if (row.requiresClimbProof) {
+        return '✅';
+      }
+      return '❌';
+    },
+  },
 ];
 
 const DataTable = () => {
