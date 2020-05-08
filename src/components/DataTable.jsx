@@ -1,15 +1,22 @@
 import React from 'react';
-import { useTable } from 'react-table';
+import { useTable, useSortBy } from 'react-table';
 import data from '../data/animals.json';
 
 const columns = [
   {
     Header: 'Name',
-    accessor: 'name',
+    id: 'name',
+    accessor: (row) => (
+      <a href={row.wikiLink}>{row.name}</a>
+    ),
   },
   {
     Header: 'Fence Grade',
     accessor: 'fenceGrade',
+  },
+  {
+    Header: 'Land Area (m²)',
+    accessor: 'landArea',
   },
 ];
 
@@ -20,7 +27,7 @@ const DataTable = () => {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data });
+  } = useTable({ columns, data }, useSortBy);
 
   return (
     <table {...getTableProps()}>
@@ -28,7 +35,10 @@ const DataTable = () => {
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th {...{ ...column.getHeaderProps(), ...column.getSortByToggleProps() }}>
+                {column.render('Header')}
+                {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+              </th>
             ))}
           </tr>
         ))}
