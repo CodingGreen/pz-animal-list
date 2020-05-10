@@ -3,9 +3,9 @@ import React from 'react';
 export default [
   {
     Header: 'Name',
-    id: 'name',
-    accessor: (row) => (
-      <a href={row.wikiLink}>{row.name}</a>
+    accessor: 'name',
+    Cell: ({ row: { original: { wikiLink, name } } }) => (
+      <a href={wikiLink}>{name}</a>
     ),
   },
   {
@@ -14,13 +14,13 @@ export default [
   },
   {
     Header: 'Land Area (m²)',
-    accessor: 'landArea',
+    accessor: 'landRequirement',
   },
   {
     Header: 'Requires climb proof fencing?',
-    id: 'requiresClimbProof',
-    accessor: (row) => {
-      if (row.requiresClimbProof) {
+    accessor: 'requiresClimbProof',
+    Cell: ({ value }) => {
+      if (value) {
         return '✅';
       }
       return '❌';
