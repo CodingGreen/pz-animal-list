@@ -2,15 +2,40 @@
     {
         "name": "Aardvark",
         "wikiLink": "https://planetzoo.fandom.com/wiki/Aardvark",
+        "continents": [
+            "Africa"
+        ],
+        "biomes": [
+            "Grassland",
+            "Tropical"
+        ],
+        "landRequirement": 330,
+        "waterRequirement": 0,
+        "climbingRequirement": 0,
+        "minimumTemperature": 16,
+        "maximumTemperature": 40,
         "fenceGrade": 2,
-        "landArea": 330,
+        "fenceMinimumHeight": 0.5,
         "requiresClimbProof": false
     },
     {
         "name": "Colombian White-Faced Capuchin Monkey",
         "wikiLink": "https://planetzoo.fandom.com/wiki/Colombian_White-Faced_Capuchin_Monkey",
+        "continents": [
+            "South America",
+            "North America"
+        ],
+        "biomes": [
+            "Tropical",
+            "Temperate"
+        ],
+        "landRequirement": 210,
+        "waterRequirement": 0,
+        "climbingRequirement": 20,
+        "minimumTemperature": 12,
+        "maximumTemperature": 42,
         "fenceGrade": 1,
-        "landArea": 210,
+        "fenceMinimumHeight": 1.25,
         "requiresClimbProof": true
     }
 ]
