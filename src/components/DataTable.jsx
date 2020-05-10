@@ -1,34 +1,7 @@
 import React from 'react';
 import { useTable, useSortBy } from 'react-table';
 import data from '../data/animals.json';
-
-const columns = [
-  {
-    Header: 'Name',
-    id: 'name',
-    accessor: (row) => (
-      <a href={row.wikiLink}>{row.name}</a>
-    ),
-  },
-  {
-    Header: 'Fence Grade',
-    accessor: 'fenceGrade',
-  },
-  {
-    Header: 'Land Area (m²)',
-    accessor: 'landArea',
-  },
-  {
-    Header: 'Requires climb proof fencing?',
-    id: 'requiresClimbProof',
-    accessor: (row) => {
-      if (row.requiresClimbProof) {
-        return '✅';
-      }
-      return '❌';
-    },
-  },
-];
+import columns from '../config/columnsConfig';
 
 const DataTable = () => {
   const {
