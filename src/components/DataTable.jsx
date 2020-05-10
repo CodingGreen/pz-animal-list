@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, useFilters } from 'react-table';
 import data from '../data/animals.json';
 import columns from '../config/columnsConfig';
 
@@ -10,7 +10,7 @@ const DataTable = () => {
     headerGroups,
     rows,
     prepareRow,
-  } = useTable({ columns, data }, useSortBy);
+  } = useTable({ columns, data }, useFilters, useSortBy);
 
   return (
     <table {...getTableProps()}>
@@ -18,9 +18,12 @@ const DataTable = () => {
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...{ ...column.getHeaderProps(), ...column.getSortByToggleProps() }}>
-                {column.render('Header')}
-                {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+              <th {...column.getHeaderProps()}>
+                <span {...column.getSortByToggleProps()}>
+                  {column.render('Header')}
+                  {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                </span>
+                <div>{column.canFilter ? column.render('Filter') : null}</div>
               </th>
             ))}
           </tr>
