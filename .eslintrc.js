@@ -24,6 +24,7 @@ module.exports = {
   ],
   rules: {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["jest-preprocess.js"]}],
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "react/prop-types": "off",
   },
 };
