@@ -26,5 +26,7 @@ module.exports = {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": ["jest-preprocess.js"]}],
     "react/jsx-props-no-spreading": "off",
     "react/prop-types": "off",
+    // Disabled because it doesn't seem to work
+    "jsx-a11y/label-has-associated-control": "off",
   },
 };
