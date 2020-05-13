@@ -38,11 +38,13 @@ const DataTable = () => {
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
                   <th {...column.getHeaderProps()}>
-                    <span {...column.getSortByToggleProps()}>
-                      {column.render('Header')}
-                      {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
-                    </span>
-                    <div>{column.canFilter ? column.render('Filter') : null}</div>
+                    {column.canSort ? (
+                      <span {...column.getSortByToggleProps()}>
+                        {column.render('Header')}
+                        {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                      </span>
+                    ) : column.render('Header')}
+                    {column.canFilter ? column.render('Filter') : null}
                   </th>
                 ))}
               </tr>

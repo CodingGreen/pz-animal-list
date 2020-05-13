@@ -11,25 +11,72 @@ export default [
     disableFilters: true,
   },
   {
-    Header: 'Fence Grade',
-    accessor: 'fenceGrade',
+    Header: 'Continents',
+    accessor: 'continents',
+    Cell: ({ value }) => value.join(', '),
     disableFilters: true,
   },
   {
-    Header: 'Land Area (m²)',
-    accessor: 'landRequirement',
+    Header: 'Biomes',
+    accessor: 'biomes',
+    Cell: ({ value }) => value.join(', '),
     disableFilters: true,
   },
   {
-    Header: 'Requires climb proof fencing?',
-    accessor: 'requiresClimbProof',
-    Cell: ({ value }) => {
-      if (value) {
-        return <span role="img" aria-label="Yes">✅</span>;
-      }
-      return <span role="img" aria-label="No">❌</span>;
-    },
-    Filter: SelectColumnFilter,
-    filter: 'equals',
+    Header: 'Habitat',
+    columns: [
+      {
+        Header: 'Land Requirement (m²)',
+        accessor: 'landRequirement',
+        disableFilters: true,
+      },
+      {
+        Header: 'Water Requirement (m²)',
+        accessor: 'waterRequirement',
+        disableFilters: true,
+      },
+      {
+        Header: 'Climbing Requirement (m²)',
+        accessor: 'climbingRequirement',
+        disableFilters: true,
+      },
+      {
+        Header: 'Minimum Temperature (°C)',
+        accessor: 'minimumTemperature',
+        disableFilters: true,
+      },
+      {
+        Header: 'Maximum Temperature (°C)',
+        accessor: 'maximumTemperature',
+        disableFilters: true,
+      },
+    ],
+  },
+  {
+    Header: 'Fence',
+    columns: [
+      {
+        Header: 'Fence Grade',
+        accessor: 'fenceGrade',
+        disableFilters: true,
+      },
+      {
+        Header: 'Minimum Fence Height (m)',
+        accessor: 'minimumFenceHeight',
+        disableFilters: true,
+      },
+      {
+        Header: 'Requires climb proof fencing?',
+        accessor: 'requiresClimbProof',
+        Cell: ({ value }) => {
+          if (value) {
+            return <span role="img" aria-label="Yes">✅</span>;
+          }
+          return <span role="img" aria-label="No">❌</span>;
+        },
+        Filter: SelectColumnFilter,
+        filter: 'equals',
+      },
+    ],
   },
 ];

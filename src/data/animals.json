@@ -15,7 +15,7 @@
         "minimumTemperature": 16,
         "maximumTemperature": 40,
         "fenceGrade": 2,
-        "fenceMinimumHeight": 0.5,
+        "minimumFenceHeight": 0.5,
         "requiresClimbProof": false
     },
     {
@@ -35,7 +35,7 @@
         "minimumTemperature": 12,
         "maximumTemperature": 42,
         "fenceGrade": 1,
-        "fenceMinimumHeight": 1.25,
+        "minimumFenceHeight": 1.25,
         "requiresClimbProof": true
     }
 ]
