@@ -4,15 +4,11 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Button from 'react-bootstrap/Button';
 import { GrFilter } from 'react-icons/gr';
 import Popover from 'react-bootstrap/Popover';
-
-const optionMap = {
-  true: '✅ - Yes',
-  false: '❌ - No',
-};
+import CheckboxList from './CheckboxList';
 
 // This is a custom filter UI for selecting
 // a unique option from a list
-function SelectColumnFilter({
+export function ListColumnFilter({
   column: {
     filterValue, setFilter, preFilteredRows, id,
   },
@@ -22,7 +18,9 @@ function SelectColumnFilter({
   const options = React.useMemo(() => {
     const optionsSet = new Set();
     preFilteredRows.forEach((row) => {
-      optionsSet.add(row.values[id]);
+      row.values[id].forEach((value) => {
+        optionsSet.add(value);
+      });
     });
     return [...optionsSet.values()];
   }, [id, preFilteredRows]);
@@ -33,29 +31,11 @@ function SelectColumnFilter({
       <Popover.Title as="h3">Filter</Popover.Title>
       <Popover.Content>
         <Form>
-          <Form.Group controlId="exampleForm.SelectCustom">
-            <Form.Label>Filter</Form.Label>
-            <Form.Control
-              as="select"
-              value={filterValue}
-              onChange={(e) => {
-                if (e.target.value === 'true') {
-                  setFilter(true);
-                } else if (e.target.value === 'false') {
-                  setFilter(false);
-                } else {
-                  setFilter(e.target.value || undefined);
-                }
-              }}
-            >
-              <option value="">All</option>
-              {options.map((option) => (
-                <option key={option} value={option}>
-                  {optionMap[option]}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
+          <CheckboxList
+            checkboxLabels={options}
+            onChange={setFilter}
+            checkedLabels={filterValue || []}
+          />
         </Form>
       </Popover.Content>
     </Popover>
@@ -72,4 +52,15 @@ function SelectColumnFilter({
   );
 }
 
-export default SelectColumnFilter;
+export function arrayFilterFn(rows, ids, filterValue) {
+  return rows.filter(
+    (row) => ids.some(
+      (id) => row.values[id].some(
+        (value) => filterValue.includes(value),
+      ),
+    ),
+  );
+}
+
+// Let the table remove the filter if the string is empty
+arrayFilterFn.autoRemove = (val) => val.length === 0;

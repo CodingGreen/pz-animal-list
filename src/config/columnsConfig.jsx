@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectColumnFilter from '../components/SelectColumnFilter';
+import { ListColumnFilter } from '../components/ListColumnFilter';
 
 export default [
   {
@@ -14,13 +15,15 @@ export default [
     Header: 'Continents',
     accessor: 'continents',
     Cell: ({ value }) => value.join(', '),
-    disableFilters: true,
+    Filter: ListColumnFilter,
+    filter: 'arrayFilterFn',
   },
   {
     Header: 'Biomes',
     accessor: 'biomes',
     Cell: ({ value }) => value.join(', '),
-    disableFilters: true,
+    Filter: ListColumnFilter,
+    filter: 'arrayFilterFn',
   },
   {
     Header: 'Habitat',

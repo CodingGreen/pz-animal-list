@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTable, useSortBy, useFilters } from 'react-table';
 import Form from 'react-bootstrap/Form';
+import { arrayFilterFn } from './ListColumnFilter';
 import data from '../data/animals.json';
 import columns from '../config/columnsConfig';
 
@@ -12,22 +13,20 @@ const DataTable = () => {
     rows,
     allColumns,
     prepareRow,
-  } = useTable({ columns, data }, useFilters, useSortBy);
+  } = useTable({ columns, data, filterTypes: { arrayFilterFn } }, useFilters, useSortBy);
 
   return (
     <>
       <Form>
         {allColumns.map((column) => (
           <div key={column.id}>
-            <label>
-              <Form.Check
-                inline
-                label={column.id}
-                type="checkbox"
-                id={`checkbox-${column.id}`}
-                {...column.getToggleHiddenProps()}
-              />
-            </label>
+            <Form.Check
+              inline
+              label={column.id}
+              type="checkbox"
+              id={`checkbox-${column.id}`}
+              {...column.getToggleHiddenProps()}
+            />
           </div>
         ))}
       </Form>
