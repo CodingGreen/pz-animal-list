@@ -24,7 +24,7 @@ const DataTable = () => {
                 inline
                 label={column.id}
                 type="checkbox"
-                id="Checkbox"
+                id={`checkbox-${column.id}`}
                 {...column.getToggleHiddenProps()}
               />
             </label>
