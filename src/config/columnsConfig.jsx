@@ -1,5 +1,6 @@
 import React from 'react';
 import SelectColumnFilter from '../components/SelectColumnFilter';
+import RangeFilter from '../components/RangeFilter';
 import { ListColumnFilter } from '../components/ListColumnFilter';
 
 export default [
@@ -31,27 +32,32 @@ export default [
       {
         Header: 'Land Requirement (m²)',
         accessor: 'landRequirement',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Water Requirement (m²)',
         accessor: 'waterRequirement',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Climbing Requirement (m²)',
         accessor: 'climbingRequirement',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Minimum Temperature (°C)',
         accessor: 'minimumTemperature',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Maximum Temperature (°C)',
         accessor: 'maximumTemperature',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
     ],
   },
@@ -61,12 +67,14 @@ export default [
       {
         Header: 'Fence Grade',
         accessor: 'fenceGrade',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Minimum Fence Height (m)',
         accessor: 'minimumFenceHeight',
-        disableFilters: true,
+        Filter: RangeFilter,
+        filter: 'between',
       },
       {
         Header: 'Requires climb proof fencing?',
