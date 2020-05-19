@@ -24,7 +24,7 @@ function SelectColumnFilter({
     <FilterMenu>
       <Form>
         <Form.Group controlId="exampleForm.SelectCustom">
-          <Form.Label>Filter</Form.Label>
+          <Form.Label>Show Values</Form.Label>
           <Form.Control
             as="select"
             value={filterValue}
