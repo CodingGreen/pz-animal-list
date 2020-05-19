@@ -8,7 +8,7 @@ export default [
     Header: 'Name',
     accessor: 'name',
     Cell: ({ row: { original: { wikiLink, name } } }) => (
-      <a href={wikiLink}>{name}</a>
+      <a href={wikiLink} target="_blank" rel="noopener noreferrer">{name}</a>
     ),
     disableFilters: true,
   },
