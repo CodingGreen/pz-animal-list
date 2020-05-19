@@ -19,6 +19,98 @@
         "requiresClimbProof": false
     },
     {
+        "name": "African Buffalo",
+        "wikiLink": "https://planetzoo.fandom.com/wiki/African_Buffalo",
+        "continents": [
+            "Africa"
+        ],
+        "biomes": [
+            "Grassland",
+            "Tropical"
+        ],
+        "landRequirement": 420,
+        "waterRequirement": 20,
+        "climbingRequirement": 0,
+        "minimumTemperature": 16,
+        "maximumTemperature": 40,
+        "fenceGrade": 3,
+        "minimumFenceHeight": 2,
+        "requiresClimbProof": false
+    },
+    {
+        "name": "African Elephant",
+        "wikiLink": "https://planetzoo.fandom.com/wiki/African_Elephant",
+        "continents": [
+            "Africa"
+        ],
+        "biomes": [
+            "Grassland",
+            "Desert"
+        ],
+        "landRequirement": 2151,
+        "waterRequirement": 148,
+        "climbingRequirement": 0,
+        "minimumTemperature": 16,
+        "maximumTemperature": 42,
+        "fenceGrade": 2,
+        "minimumFenceHeight": 0,
+        "requiresClimbProof": false
+    },
+    {
+        "name": "African Wild Dog",
+        "wikiLink": "https://planetzoo.fandom.com/wiki/African_Wild_Dog",
+        "continents": [
+            "Africa"
+        ],
+        "biomes": [
+            "Grassland"
+        ],
+        "landRequirement": 1162,
+        "waterRequirement": 0,
+        "climbingRequirement": 0,
+        "minimumTemperature": 16,
+        "maximumTemperature": 40,
+        "fenceGrade": 2,
+        "minimumFenceHeight": 0,
+        "requiresClimbProof": false
+    },
+    {
+        "name": "Aldabra Giant Tortoise",
+        "wikiLink": "https://planetzoo.fandom.com/wiki/Aldabra_Giant_Tortoise",
+        "continents": [
+            "Africa"
+        ],
+        "biomes": [
+            "Tropical"
+        ],
+        "landRequirement": 230,
+        "waterRequirement": 0,
+        "climbingRequirement": 0,
+        "minimumTemperature": 16,
+        "maximumTemperature": 42,
+        "fenceGrade": 1,
+        "minimumFenceHeight": 0,
+        "requiresClimbProof": false
+    },
+    {
+        "name": "American Bison",
+        "wikiLink": "https://planetzoo.fandom.com/wiki/American_Bison",
+        "continents": [
+            "North America"
+        ],
+        "biomes": [
+            "Grassland"
+        ],
+        "landRequirement": 420,
+        "waterRequirement": 0,
+        "climbingRequirement": 0,
+        "minimumTemperature": 0,
+        "maximumTemperature": 40,
+        "fenceGrade": 3,
+        "minimumFenceHeight": 0,
+        "requiresClimbProof": false
+    },
+    {
         "name": "Colombian White-Faced Capuchin Monkey",
         "wikiLink": "https://planetzoo.fandom.com/wiki/Colombian_White-Faced_Capuchin_Monkey",
         "continents": [
