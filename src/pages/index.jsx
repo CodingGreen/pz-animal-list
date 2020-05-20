@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import Seo from '../components/Seo';
 import DataTable from '../components/DataTable';
 import InfoModal from '../components/InfoModal';
@@ -40,6 +41,16 @@ const IndexPage = () => (
           you can close the menu by clicking the filter button again.
         </li>
       </ul>
+      <Jumbotron>
+        <h2>Not all animals listed!</h2>
+        <p>
+          I haven&apos;t had time to add all the data yet! If you&apos;d like to help submit a pull
+          request over on GitHub.
+        </p>
+        <p>
+          <Button href="https://github.com/CodingGreen/pz-animal-list">Submit a Pull Request</Button>
+        </p>
+      </Jumbotron>
     </div>
     <DataTable />
   </>
