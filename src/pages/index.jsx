@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Seo from '../components/Seo';
 import DataTable from '../components/DataTable';
 import InfoModal from '../components/InfoModal';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,6 +8,7 @@ import './index.css';
 
 const IndexPage = () => (
   <>
+    <Seo />
     <div className="introduction">
       <h1>Unofficial Planet Zoo Animals List</h1>
       <p>
@@ -33,9 +35,9 @@ const IndexPage = () => (
           will stop the column being sorted.
         </li>
         <li>
-          You can filter a column by clicking on the filter button for that column which will open a
-          filter menu unique to the column you are filtering. Filters are applied immediately and you
-          can close the menu by clicking the filter button again.
+          You can filter a column by clicking on the filter button for that column which will open
+          a filter menu unique to the column you are filtering. Filters are applied immediately and
+          you can close the menu by clicking the filter button again.
         </li>
       </ul>
     </div>
