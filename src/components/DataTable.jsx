@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { arrayFilterFn } from './ListColumnFilter';
 import data from '../data/animals.json';
 import columns from '../config/columnsConfig';
+import './dataTable.css';
 
 const DataTable = () => {
   const {
@@ -16,20 +17,22 @@ const DataTable = () => {
   } = useTable({ columns, data, filterTypes: { arrayFilterFn } }, useFilters, useSortBy);
 
   return (
-    <>
-      <Form>
+    <div className="m-4">
+      <h2>Choose columns</h2>
+      <Form className="columnSelection ml-3 mt-3">
         {allColumns.map((column) => (
-          <div key={column.id}>
-            <Form.Check
-              inline
-              label={column.id}
-              type="checkbox"
-              id={`checkbox-${column.id}`}
-              {...column.getToggleHiddenProps()}
-            />
-          </div>
+          <Form.Check
+            inline
+            label={column.render('Header')}
+            type="checkbox"
+            id={`checkbox-${column.id}`}
+            {...column.getToggleHiddenProps()}
+            className="mr-3 mb-3"
+            key={column.id}
+          />
         ))}
       </Form>
+      <h2>Animal List</h2>
       <div style={{ overflowX: 'auto' }}>
         <table {...getTableProps()}>
           <thead>
@@ -40,7 +43,7 @@ const DataTable = () => {
                     {column.canSort ? (
                       <span {...column.getSortByToggleProps()}>
                         {column.render('Header')}
-                        {column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+                        {column.isSorted ? (column.isSortedDesc ? ' 🔼' : ' 🔽') : ''}
                       </span>
                     ) : column.render('Header')}
                     {column.canFilter ? column.render('Filter') : null}
@@ -61,7 +64,7 @@ const DataTable = () => {
           </tbody>
         </table>
       </div>
-    </>
+    </div>
   );
 };
 

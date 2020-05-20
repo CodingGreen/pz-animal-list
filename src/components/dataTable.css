@@ -1,0 +1,4 @@
+.columnSelection {
+    display: flex;
+    flex-wrap: wrap;
+}
