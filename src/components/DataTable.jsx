@@ -17,7 +17,7 @@ const DataTable = () => {
   } = useTable({ columns, data, filterTypes: { arrayFilterFn } }, useFilters, useSortBy);
 
   return (
-    <div className="m-4">
+    <>
       <h2>Choose columns</h2>
       <Form className="columnSelection ml-3 mt-3">
         {allColumns.map((column) => (
@@ -64,7 +64,7 @@ const DataTable = () => {
           </tbody>
         </table>
       </div>
-    </div>
+    </>
   );
 };
 
