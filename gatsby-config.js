@@ -3,6 +3,7 @@ module.exports = {
     title: 'Unofficial Planet Zoo Animal List',
     description: 'This unofficial tool for the game Planet Zoo allows players to sort and filter the animals in the game to find the perfect animals to add to their zoo.',
   },
+  pathPrefix: '/pz-animal-list',
   plugins: [
     'gatsby-plugin-react-helmet',
     {

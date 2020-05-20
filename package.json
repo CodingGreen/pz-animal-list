@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "build:gh-pages": "npm run clean && rm -r ./docs && gatsby build --prefix-paths && mv ./public ./docs",
     "clean": "gatsby clean",
     "develop": "gatsby develop",
     "lint": "eslint --ext .jsx --ext .js .",
