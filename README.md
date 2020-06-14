@@ -26,4 +26,4 @@ Then you will have the website running on `localhost:8000`
 * `npm run lint:fix` - Runs the linter and automatically fixes any issue it is able to.
 * `npm run serve` - Serves the production build created using `npm run build`
 * `npm start` - Runs `npm run develop`
-* `npm test` - Runs the test suite. However, there aren't any tests yet as this project was a learn exercise that didn't include testing. If you are writing production code you should write tests!!!
+* `npm test` - Runs the test suite. However, there aren't any tests yet as this project was a quick learning exercise that didn't include learning testing. If you are writing production code you should write tests!!!
